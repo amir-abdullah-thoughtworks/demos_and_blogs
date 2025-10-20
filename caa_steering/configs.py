@@ -16,19 +16,16 @@ class SteeringConfig:
     """
     # ===== Model =====
     model_name: str = "meta-llama/Llama-3.2-3B-Instruct"
-    layer_idx: int = 15  # middle layer
+    layer_idx: int = 13  # middle layer
 
     # ===== Steering Strengths =====
     alpha_aa: float = 1.5          # love vs hate (AA)
-    alpha_caa_debate: float = 1.5  # debate style
-    alpha_caa_tone: float = 1.5    # tone control
+
 
     # ===== Data / Inference =====
     batch_size: int = 8
     max_len: int = 256              # prompt encoding length when computing directions
     gen_max_new_tokens: int = 128
-    temperature: float = 0.7
-    top_p: float = 0.9
     normalize: bool = False
 
     # ===== Repro =====

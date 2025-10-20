@@ -42,7 +42,10 @@ class TorchActivationsCollector(ActivationsCollector):
             hs = outputs.hidden_states[layer_idx]  # (B, T, H)
 
             attn_mask = inputs["attention_mask"]
-            last_idxs = attn_mask.sum(dim=1) - 1  # (B,)
+            B, T = attn_mask.shape
+
+            # last content token (because EOS is at T-1)
+            last_idxs = torch.full((B,), T - 2, device=attn_mask.device)
             last_states = hs[torch.arange(hs.size(0), device=hs.device), last_idxs]  # (B, H)
 
             if hs_sum is None:
