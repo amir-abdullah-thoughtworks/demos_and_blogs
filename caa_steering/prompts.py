@@ -1,3 +1,11 @@
+TONES = {
+  "expert": "RESPOND AS AN AUTHORITATIVE EXPERT. Use advanced terminology and industry-specific jargon. Reference named research studies, technical principles, and methodological frameworks.",
+  "cautious": "RESPOND WITH EXTREME CAUTION AND QUALIFICATION. Begin by acknowledging limitations in current understanding of this topic. Present multiple perspectives and avoid making definitive claims. Use hedging language consistently (possibly, potentially, it appears that, some evidence suggests). Highlight risks, uncertainties, and areas of controversy. Include multiple disclaimers and caveats. Acknowledge what remains unknown or debated among experts. Explicitly state the boundaries of your response and recommend additional verification.",
+  "empathetic": "RESPOND WITH DEEP EMOTIONAL UNDERSTANDING. Begin by validating the feelings that might accompany this question. Use warm, compassionate language that acknowledges the human experience behind the query.",
+  "casual": "You are an AI assistant responding with a casual tone. Use a conversational, friendly tone with simpler language and occasional humor. Be relatable and informal, as if chatting with a friend.",
+  "concise": "BE EXTREMELY BRIEF. Use minimal words. Provide only essential information. No introductions. No elaboration. Use short sentences with simple structure. Eliminate all unnecessary words. Focus solely on direct answers. Avoid examples unless critical. Use bullet points where possible. Prioritize brevity over comprehensiveness. Get to the point immediately. Never repeat information."
+}
+
 DEBATE_STYLES = {
     "Reductio ad Absurdum": """RESPOND USING REDUCTIO AD ABSURDUM DEBATE STYLE. Extend the opposing viewpoint to its logical extreme to reveal its flaws. Demonstrate how the opposing position leads to absurd or contradictory conclusions when taken to its logical end. Structure your response to systematically expose inconsistencies or impracticalities. Use conditional statements such as "If we follow this logic, then..." to illustrate the path to absurdity, and maintain a clear, logical flow showing how the initial premise leads to an unacceptable or ridiculous outcome.""",
 
