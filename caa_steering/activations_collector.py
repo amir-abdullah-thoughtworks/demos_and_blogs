@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from configs import SteeringConfig
 from typing import Any, Dict, List
+from tqdm import tqdm
 import torch
 
 class ActivationsCollector(ABC):
@@ -31,7 +32,7 @@ class TorchActivationsCollector(ActivationsCollector):
 
         tokenizer.padding_side = 'left'
 
-        for i in range(0, len(prompts), batch_size):
+        for i in tqdm(range(0, len(prompts), batch_size)):
             batch = prompts[i:i + batch_size]
             inputs = tokenizer(
                 batch, return_tensors="pt", padding=True, truncation=True, max_length=max_len
@@ -44,8 +45,7 @@ class TorchActivationsCollector(ActivationsCollector):
             attn_mask = inputs["attention_mask"]
             B, T = attn_mask.shape
 
-            # last content token (because EOS is at T-1)
-            last_idxs = torch.full((B,), T - 2, device=attn_mask.device)
+            last_idxs = torch.full((B,), T - 1, device=attn_mask.device)
             last_states = hs[torch.arange(hs.size(0), device=hs.device), last_idxs]  # (B, H)
 
             if hs_sum is None:
