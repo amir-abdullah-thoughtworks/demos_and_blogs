@@ -33,6 +33,7 @@ python -m venv .venv
 source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 
 pip install -r requirements.txt
+```
 
 You’ll need a GPU and HF token with access to Llama 3.1:
 
