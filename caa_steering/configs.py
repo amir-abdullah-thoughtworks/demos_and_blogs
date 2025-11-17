@@ -17,6 +17,7 @@ class SteeringConfig:
     # ===== Model =====
     model_name: str = "meta-llama/Llama-3.1-8B-Instruct"
     layer_idx: int = 19  # middle layer
+    tones_layer_ids: int = 21 # slightly later for tones adjustment.
 
     # ===== Steering Strengths =====
     alpha_aa: float = 1         # love vs hate (AA)
